@@ -9,25 +9,37 @@ If the chat is reset, say:
 - **V2 GitHub repository:** `Aliuliu001/hansel_and_gretel_v2`
 - **V2 online link:** https://aliuliu001.github.io/hansel_and_gretel_v2/
 - **V2 local folder:** `/home/ubuntu/hansel-gretel-escape-v2`
-- **V1 repository preserved without further changes:** `Aliuliu001/hansel_and_gretel`
-- **V1 online link:** https://aliuliu001.github.io/hansel_and_gretel/
+- **V1 protected repository:** `Aliuliu001/hansel_and_gretel` — do not modify.
 
-## Starting point copied from V1
-- Classic numeric passcode, Maths solver, and English Maths solver.
-- Teacher paste data format; 1–200 selected rounds; 1–10 digit lock.
-- Normal/Hard modes, success/wrong effects, round progress, and win screen.
+## V2 is complete
+### Learning loop
+- Settings show both pasted-question count and the actual number of rounds to play.
+- “Repeat questions to reach target” lets a teacher reuse a short list up to 200 rounds.
+- Wrong answers show Maths calculation guidance or English Maths word meanings.
+- Win screen reports first-try answers, stars, hints, mistakes, best combo, time, and English vocabulary.
 
-## V2 direction agreed by anh Trương
-V2 will make the game more engaging for children learning Maths and English. First, build the fair learning loop:
-1. Tell the teacher exactly how many pasted questions were read and how many rounds will actually play.
-2. Offer a choice to repeat pasted questions up to the desired round target.
-3. Give child-friendly Maths/English hints after mistakes.
-4. Show a learning report at the end: correct first try, hints, mistakes, combo, and vocabulary seen.
+### Game loop
+- Stars and candy rewards; 5-answer combos give extra reward.
+- Hint Candy costs 2 candies. Shield Candy costs 3 and blocks one wrong-answer penalty.
+- Witch Chase meter: correct answers push the witch back; mistakes bring her closer. Normal mode is child-friendly.
+- Four story stages: Candy House → Witch’s Kitchen → Dark Forest → Iron Gate.
+- Every fifth repeated/pasted item is a reward round; teacher can mark one explicitly with `⭐`:
+  `⭐ 6 + 7 = 13`
+- English Maths questions with `plus/minus/times/divided by/equals` show a Word Spell vocabulary mini challenge.
+- End screen has **Copy report**.
 
-Then build rewards and tension (Candy Backpack, stars/combo, Witch Chase), then the journey map and varied challenge formats. The full roadmap is in `plan.md`; status is in `tasks.md`.
+## Key files
+- `src/gameEngine.ts`: sequence/repeat logic, stages, teacher parser, learning hints, English vocabulary.
+- `src/gameEngine.test.ts`: 6 logic tests.
+- `src/components/TeacherSettingsModal.tsx`: teacher settings and live real-round count.
+- `src/components/GamePlayView.tsx`: V2 gameplay, rewards, Witch Chase, Word Spell, final report.
+- `plan.md`: roadmap; `tasks.md`: completed checklist.
 
-## Important rules
-- Change only V2 from now on; do not modify V1.
-- Before publishing: `npm run lint`, `npm run build`, then browser smoke-test.
-- Publish only V2 to its own `gh-pages` branch.
-- Teacher content remains pasted into Settings; no student data is sent to a server.
+## Verification before publish
+- `npx vitest run` — passed (6 tests).
+- `npm run lint` — passed.
+- `npm run build` — passed.
+- Browser smoke test passed for settings/repetition, wrong-answer English hint, and correct reward state.
+
+## Publishing rule
+Use only V2’s `main` and `gh-pages` branches. After a deployment wait for GitHub Pages status `built` and check that live HTML uses the new asset hash.
