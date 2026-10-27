@@ -1,13 +1,25 @@
-# Hansel & Gretel Escape v2.0 — Tasks & Progress Tracker
+# Hansel & Gretel: Candy House Escape — V2 Task Tracker
 
-## Active Batch (Batch 1)
-- [x] Plan creation & user agreement.
-- [x] Create `tasks.md` and `context-resume.md` (for `/new` recovery).
-- [x] Update `types/game.ts` with v2 data structures.
-- [x] Update `TeacherSettingsModal.tsx` with mode selection, round count, and clear paste instructions.
-- [x] Update `CombinationLock.tsx` for 1–10 flexible digits.
-- [x] Update `GamePlayView.tsx` for multi-round math/English solver engine.
-- [x] Build & deploy to GitHub Pages.
+## V2 setup — complete
+- [x] Create a separate public GitHub repository: `Aliuliu001/hansel_and_gretel_v2`.
+- [x] Copy the complete V1 source baseline into the V2 repository.
+- [x] Keep V1 (`Aliuliu001/hansel_and_gretel`) unchanged from this point.
+- [x] Save the V2 learning-and-adventure roadmap in `plan.md`.
 
-## Bug / Issue Log
-- None currently. (Fixed previous state-filtering bug by replacing with explicit round index tracking).
+## Phase A — Fair learning loop — next
+- [ ] Show the number of pasted questions and the real number of rounds to be played.
+- [ ] Add “repeat questions until target round count” as a teacher setting.
+- [ ] Add child-friendly Maths and English hints after wrong answers.
+- [ ] Add learning results to the win screen: first-try correct, hints, mistakes, combo, vocabulary.
+- [ ] Type check, build, browser-test, and publish V2.
+
+## Phase B — Tension and rewards
+- [ ] Stars, combo, and Candy Backpack helpers.
+- [ ] Witch Chase meter with child-friendly Normal mode.
+
+## Phase C — Adventure variety
+- [ ] Four-stage journey map and reward rounds.
+- [ ] Varied question formats and teacher Adventure Report.
+
+## Issue log
+- None in V2 yet.
