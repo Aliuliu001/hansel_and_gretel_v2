@@ -27,7 +27,7 @@
 - [x] Logic tests: 6 passed.
 - [x] Type check and production build passed.
 - [x] Browser smoke checks passed for settings, repeated rounds, wrong-answer hint, and correct-answer reward.
-- [ ] Publish V2 GitHub Pages and verify its live asset.
+- [x] Publish V2 GitHub Pages and verify its live asset (`index-DxQuP62f.js`).
 
 ## Issue log
 - No known V2 issue.
